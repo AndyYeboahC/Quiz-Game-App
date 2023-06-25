@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap");
+@import "~bootstrap/scss/bootstrap";
+@import "../../utils/variables.scss";
+
+$transition-time: 2.3s;
+
+body {
+  font-family: "Oswald", sans-serif;
+  section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    .row {
+      align-items: flex-start;
+      padding-top: 30px;
+    }
+  }
+}
+
+.card {
+  min-height: 45vh;
+  width: 100%;
+  margin: 10px 0;
+  transition: ease all $transition-time;
+  background-color: $main-background-color;
+  border: none;
+  h1 {
+    font-size: 30px !important;
+  }
+  &:hover {
+    .cover {
+      transform: rotateX(0deg) rotateY(-180deg);
+      &:before {
+        transform: translateZ(30px);
+      }
+      &:after {
+        background-color: $black;
+      }
+      h1 {
+        transform: translateZ(100px);
+      }
+      .price {
+        transform: translateZ(60px);
+      }
+      a {
+        transform: translateZ(-60px) rotatey(-180deg);
+      }
+    }
+  }
+
+  .cover {
+    position: absolute;
+    min-height: 45vh;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: ease all $transition-time;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: $main-background-color;
+    &:before {
+      content: "";
+      position: absolute;
+      border: 5px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      z-index: 2;
+      transition: ease all $transition-time;
+      transform-style: preserve-3d;
+      transform: translateZ(0px);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      z-index: 2;
+      transition: ease all 1.3s;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    &.item-1 {
+      background-image: url("../../assets/images/background-classroom.jpg");
+    }
+    &.item-2 {
+      background-image: url("../../assets/images/background-raise-hand.jpg");
+    }
+
+    h1 {
+      font-weight: 600;
+      position: absolute;
+      bottom: 15px;
+      left: 25px;
+      color: $white;
+      transform-style: preserve-3d;
+      transition: ease all $transition-time;
+      z-index: 3;
+      font-size: 3em;
+      transform: translateZ(0px);
+    }
+  }
+  .card-back {
+    position: absolute;
+    min-height: 45vh;
+    width: 100%;
+    background: #3f1e15;
+    transform-style: preserve-3d;
+    transition: ease all $transition-time;
+    transform: translateZ(-1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      transform-style: preserve-3d;
+      transition: ease transform $transition-time, ease background 0.5s;
+      transform: translateZ(-1px) rotatey(-180deg);
+      background: transparent;
+      border: 1px solid $white;
+      font-weight: 200;
+      font-size: 1.3em;
+      color: $white;
+      padding: 14px 32px;
+      outline: none;
+      text-decoration: none;
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
+    }
+  }
+}
+
+#showMe {
+  margin-top: 5vh;
+  text-align: center;
+  font-weight: 900;
+  color: $main-primary-color;
+  font-size: 50px;
+}
+
+@keyframes cssAnimation {
+  to {
+    visibility: visible;
+  }
+}
