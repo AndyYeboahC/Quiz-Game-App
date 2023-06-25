@@ -2,7 +2,7 @@
   "name": "quiz-game",
   "version": "0.1.0",
   "proxy": "https://s3.eu-west-2.amazonaws.com",
-  "homepage": "https://quiz-game-iri3.onrender.com",
+  "homepage": "https://quiz-game-v1.onrender.com",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -24,6 +24,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -46,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
