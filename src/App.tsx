@@ -1,7 +1,7 @@
 import React, { createContext } from "react";
 import logo from "./logo.svg";
 import "./App.scss";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import { Router } from "express";
 import Home from "./pages/Home/Home";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
@@ -27,7 +27,7 @@ function App() {
   return (
     <div>
       <ProcessProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route index element={<Home data={data} />} />
             <Route path="/home" element={<Home data={data} />} />
@@ -41,7 +41,7 @@ function App() {
               element={<Loader message={MESSAGE.PAGE_NOT_FOUND} />}
             />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </ProcessProvider>
     </div>
   );
