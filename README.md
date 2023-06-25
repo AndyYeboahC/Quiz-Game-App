@@ -4,16 +4,16 @@ Error Find is a language quiz game aiming to strengthen and enhance its user's l
 
 ## Activities
 
-This app is divided into 2 Activity Categories: 1. Activity One 2. Activity 2
+This app is divided into 2 Activity Categories:
 
 ### Activity One
 
 The user iterates through all the questions. When all
-questions have been answered, a scoreboard showing the user's correct/wrong answers per question given
+questions have been answered, a scoreboard showing the user's correct/wrong answers per question will be displayed
 
 ### Activity Two
 
 The user iterates through multiple sets of questions. When
-each set of questions have been answered the user is proceeded to the next round. When all rounds have been answered, a scoreboard showing the user's correct/wrong answers per round and question given
+each set of questions have been answered the user is proceeded to the next round. When all rounds have been answered, a scoreboard showing the user's correct/wrong answers per round and question will be displayed
 
 ## HAPPY LEARNING!
