@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Quiz-Game-App/static/css/main.1a3bd4b5.css",
+    "main.js": "/Quiz-Game-App/static/js/main.aa83574d.js",
+    "static/js/787.eaa387ba.chunk.js": "/Quiz-Game-App/static/js/787.eaa387ba.chunk.js",
+    "static/media/background-classroom.jpg": "/Quiz-Game-App/static/media/background-classroom.0dde7b69bb59e2635bed.jpg",
+    "static/media/background-raise-hand.jpg": "/Quiz-Game-App/static/media/background-raise-hand.d08c6ad5d25e0bb0e02e.jpg",
+    "index.html": "/Quiz-Game-App/index.html",
+    "main.1a3bd4b5.css.map": "/Quiz-Game-App/static/css/main.1a3bd4b5.css.map",
+    "main.aa83574d.js.map": "/Quiz-Game-App/static/js/main.aa83574d.js.map",
+    "787.eaa387ba.chunk.js.map": "/Quiz-Game-App/static/js/787.eaa387ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a3bd4b5.css",
+    "static/js/main.aa83574d.js"
+  ]
+}
