@@ -1,3 +1,5 @@
+@import "../../../utils/variables.scss";
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -7,7 +9,7 @@ Button {
   margin: 5px;
   &:hover {
     background-color: #282c34 !important;
-    color: white !important;
+    color: $white !important;
   }
 }
 
@@ -52,7 +54,7 @@ Button {
 
     .description {
       margin: 0.5rem 0;
-      color: #a89ec9;
+      color: $white;
       position: inherit;
     }
   }
