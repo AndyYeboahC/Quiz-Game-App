@@ -8,7 +8,7 @@ const useFetch = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/interview.mock.data/payload.json")
+    fetch("https://s3.eu-west-2.amazonaws.com/interview.mock.data/payload.json")
       .then((response) => response.json())
       .then((data) => {
         setData(data);
