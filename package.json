@@ -2,7 +2,7 @@
   "name": "quiz-game",
   "version": "0.1.0",
   "proxy": "https://s3.eu-west-2.amazonaws.com",
-  "homepage": "http://localhost:3000",
+  "homepage": "https://quiz-game-iri3.onrender.com",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
