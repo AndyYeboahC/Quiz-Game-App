@@ -2,6 +2,7 @@ import { log } from "console";
 import { useState } from "react";
 import { AnswerType } from "../../constants";
 
+// VALIDATE IF THE USER'S INPUT/ANSWER IS RIGHT OR WRONG
 const validate = (
   userAnswer: boolean,
   data: any,
@@ -39,13 +40,12 @@ const save = (
   const array = window.localStorage.getItem("round" + round);
   const parsedArray = array ? JSON.parse(array) : [];
 
-  // CHECK IF THE QUESTION WAS ALREADY ANSWERED
   update(parsedArray, data, id, round);
-
-  // const newArray = [...parsedArray, ...data];
-  // window.localStorage.setItem("round" + round, JSON.stringify(newArray));
 };
 
+// UPDATE AND CHECK IF THE SPECIFIC QUESTION WAS ALREADY ANSWERED
+// IF THE USER RELOADS THE APP (HALFWAY THROUGH ANSWERING QUESTIONS), THIS FUNCTION WILL CHECK IF THE USER ALREADY ANSWERED A QUESTION PRIOR TO RELOADING THE APP.
+// **THIS IS TO AVOID DATA DUPLICATE**
 const update = (parsedArray: any, data: any, id: string, round: number) => {
   const existingItem = parsedArray.find((item: any) => item.id === id);
   if (existingItem === undefined) {

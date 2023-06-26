@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ActivityType } from "../constants";
 import { log } from "console";
+import { ProcessContext } from "../contexts/ProcessContext";
 
+// PROVIDE APPOPRIATE DATA DEPENDING ON THE ACTIVITY CHOSEN BY THE USER
 const useFetchChosenActivity = (
   activities: any,
   activityId: any,
@@ -9,34 +11,24 @@ const useFetchChosenActivity = (
   setIsComponentVisible: any
 ) => {
   const [currentActivity, setCurrentActivity] = useState([]);
-  const [currentActivityName, setCurrentActivityName] = useState("");
   const [currentQuestions, setCurrentQuestions] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  // const [isComponentVisible, setIsComponentVisible] = useState(true);
   const [isActivityOne, setIsActivityOne] = useState(true);
   const [roundTitle, setRoundTitle] = useState("");
+  const { currentActivityNameP } = useContext(ProcessContext);
+  const { currentActivityName, setCurrentActivityName } = currentActivityNameP;
 
   useEffect(() => {
-    // switch (activityId) {
-    //   case ActivityType.ACTIVITY_ONE:
-    //     setActivityId(activityId);
-    //     break;
-    //   case ActivityType.ACTIVITY_TWO:
-    //     setActivityId(params.activityId);
-    //     break;
-    //   default:
-    //     return <Loader message={MESSAGE.PAGE_NOT_FOUND} />;
-    // }
     const chosenActivity = activities.find((activity: any) => {
       return activity.order == activityId;
     });
 
     setCurrentActivity(chosenActivity);
-    setCurrentActivityName(chosenActivity.activity_name);
     setCurrentQuestions(chosenActivity.questions);
     setIsLoading(false);
 
     if (activityId == ActivityType.ACTIVITY_TWO) {
+      setCurrentActivityName(ActivityType.ACTIVIT_TWO_WORDED);
       setIsComponentVisible(true);
       setTimeout(() => {
         setIsComponentVisible(false);
@@ -46,7 +38,6 @@ const useFetchChosenActivity = (
   }, []);
 
   return {
-    currentActivityName,
     currentQuestions,
     isLoading,
     isActivityOne,

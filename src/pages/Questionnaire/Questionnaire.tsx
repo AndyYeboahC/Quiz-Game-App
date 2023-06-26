@@ -21,11 +21,7 @@ export default function Questionnaire(props: any) {
           </svg>
         </div>
       </div>
-      <div className="text">
-        {/* <p>Duis quis</p>
-        <p>nec sapien</p>
-        <button>More</button> */}
-      </div>
+      <div className="text"></div>
     </>
   );
 }

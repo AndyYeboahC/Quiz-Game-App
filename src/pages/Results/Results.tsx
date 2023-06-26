@@ -20,6 +20,7 @@ export default function Results(props: any) {
   const { counterQuestion, setCounterQuestion } = counterQuestionP;
   const { counterRound, setCounterRound } = counterRoundP;
 
+  // ITERATE THROUGH ALL THE ROUNDS AND QUESTION AND PROVIDE THE LIST TEMPLATE
   for (let i = 1; i <= localStorage.length; i++) {
     const answer = JSON.parse(localStorage.getItem("round" + i)!);
     rows.push(<h1>ROUND {i}</h1>);
@@ -37,12 +38,14 @@ export default function Results(props: any) {
     );
   }
 
+  // REDIRECT TO HOME PAGE AND GAME RESET
   const navigateHome = () => {
     localStorage.clear();
     setCounterQuestion(NUMBER.RESET);
     setCounterRound(NUMBER.START);
     navigate("/home");
   };
+
   return (
     <div className="container">
       <h4>RESULTS</h4>

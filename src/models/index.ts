@@ -15,10 +15,16 @@ export interface IsComponentVisibleInterace {
   setIsComponentVisible: Dispatch<SetStateAction<boolean>>;
 }
 
+export interface CurrentActivityNameInterface {
+  currentActivityName: string;
+  setCurrentActivityName: Dispatch<SetStateAction<string>>;
+}
+
 export type ProcessInterface = {
   counterQuestionP: CounterQuestionInterace;
   counterRoundP: CounterRoundInterace;
   isComponentVisibleP: IsComponentVisibleInterace;
+  currentActivityNameP: CurrentActivityNameInterface;
 };
 
 export interface Activity {

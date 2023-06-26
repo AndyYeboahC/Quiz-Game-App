@@ -1,6 +1,8 @@
 export enum ActivityType {
   ACTIVITY_ONE = "1",
   ACTIVITY_TWO = "2",
+  ACTIVITY_ONE_WORDED = "ACTIVITY ONE",
+  ACTIVIT_TWO_WORDED = "ACTIVITY TWO",
 }
 
 export enum LINKS {

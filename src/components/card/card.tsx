@@ -7,11 +7,16 @@ import { ProcessContext } from "../../contexts/ProcessContext";
 
 export default function Card(props: any) {
   const navigate = useNavigate();
-  const { counterQuestionP, counterRoundP, isComponentVisibleP } =
-    useContext(ProcessContext);
+  const {
+    counterQuestionP,
+    counterRoundP,
+    isComponentVisibleP,
+    currentActivityNameP,
+  } = useContext(ProcessContext);
   const { counterQuestion, setCounterQuestion } = counterQuestionP;
   const { counterRound, setCounterRound } = counterRoundP;
   const { isComponentVisible, setIsComponentVisible } = isComponentVisibleP;
+  const { currentActivityName, setCurrentActivityName } = currentActivityNameP;
 
   const next = (answer: boolean) => {
     const questionNumber = counterQuestion! + 1;
@@ -35,7 +40,9 @@ export default function Card(props: any) {
 
   return (
     <div className="main">
-      {/* <h2>{props.activityName}</h2> */}
+      <h6>
+        {currentActivityName} / ROUND{counterRound}
+      </h6>
       <p className="description">{props.question}</p>
 
       <hr />

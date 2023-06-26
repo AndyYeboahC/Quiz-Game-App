@@ -1,6 +1,9 @@
 import { ReactNode, createContext, useState } from "react";
 import { ProcessInterface } from "../models/index";
+import { ActivityType } from "../constants";
 
+// MAKE THE PROCESS VARIABLES AND FUNCTIONS AVAILABLE TO ALL THE COMPONENTS NEEDED.
+// THIS IS TO AVOID/MINIMIZE PROPS DRILLING
 const defaultProcess = {
   counterQuestionP: {
     counterQuestion: 0,
@@ -10,6 +13,10 @@ const defaultProcess = {
   isComponentVisibleP: {
     isComponentVisible: false,
     setIsComponentVisible: (boolean: boolean) => {},
+  },
+  currentActivityNameP: {
+    currentActivityName: ActivityType.ACTIVITY_ONE_WORDED,
+    setCurrentActivityName: (string: string) => {},
   },
 } as ProcessInterface;
 
@@ -23,6 +30,8 @@ export default function ProcessProvider({ children }: ProcessProvideProps) {
   const [counterQuestion, setCounterQuestion] = useState(0);
   const [counterRound, setCounterRound] = useState(1);
   const [isComponentVisible, setIsComponentVisible] = useState(false);
+  const [currentActivityName, setCurrentActivityName] =
+    useState("ACTIVITY ONE");
 
   return (
     <ProcessContext.Provider
@@ -30,6 +39,7 @@ export default function ProcessProvider({ children }: ProcessProvideProps) {
         counterQuestionP: { counterQuestion, setCounterQuestion },
         counterRoundP: { counterRound, setCounterRound },
         isComponentVisibleP: { isComponentVisible, setIsComponentVisible },
+        currentActivityNameP: { currentActivityName, setCurrentActivityName },
       }}
     >
       {children}

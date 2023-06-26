@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { LINKS } from "../constants";
 
+// FETCH DATA FROM THE API
 const useFetch = () => {
   const [data, setData] = useState({});
   const [title, setTitle] = useState("");
@@ -8,7 +9,7 @@ const useFetch = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://s3.eu-west-2.amazonaws.com/interview.mock.data/payload.json")
+    fetch("interview.mock.data/payload.json")
       .then((response) => response.json())
       .then((data) => {
         setData(data);

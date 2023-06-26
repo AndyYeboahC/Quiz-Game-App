@@ -11,7 +11,6 @@ import Loader from "../../../components/loader/loader";
 
 export default function Activity(props: any) {
   const params = useParams();
-  // const [activityId, setActivityId] = useState("");
 
   const activityId = params.activityId;
   const activities = props.data.activities;
@@ -20,18 +19,12 @@ export default function Activity(props: any) {
   const { counterQuestion, setCounterQuestion } = counterQuestionP;
   const { counterRound, setCounterRound } = counterRoundP;
   const { isComponentVisible, setIsComponentVisible } = isComponentVisibleP;
-
-  const { currentActivityName, currentQuestions, isLoading, isActivityOne } =
-    useFetchActivity(
-      activities,
-      activityId,
-      counterRound,
-      setIsComponentVisible
-    );
-
-  // if((params.activityId != ActivityType.ACTIVITY_ONE) || (params.activityId != ActivityType.ACTIVITY_TWO) ){
-
-  // }
+  const { currentQuestions, isLoading, isActivityOne } = useFetchActivity(
+    activities,
+    activityId,
+    counterRound,
+    setIsComponentVisible
+  );
 
   if (isLoading) {
     return <Loader message={MESSAGE.LOADING} />;
@@ -50,7 +43,6 @@ export default function Activity(props: any) {
             ) : (
               <div className="vessel">
                 <Card
-                  activityName={currentActivityName}
                   question={currentQuestions[counterQuestion].stimulus}
                   questionData={currentQuestions[counterQuestion]}
                 />
