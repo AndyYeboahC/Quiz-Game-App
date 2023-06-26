@@ -8,11 +8,6 @@ export default function Home(props: any) {
   const name = props.data.name;
   const activities = props.data.activities;
 
-  //   useEffect(() => {
-  //     setName(props.data.name);
-  //     setActivities(props.data.activities);
-  //   }, [name, activities]);
-
   const navigate = useNavigate();
 
   const handleClick = (activityNumber: number) => {
@@ -25,11 +20,10 @@ export default function Home(props: any) {
       <div className="row">
         {activities?.map((activity: Activity) => {
           return (
-            <div className="col-md-6 col-sm-6 col-xs-12">
+            <div className="col-md-6 col-sm-6 col-xs-12" key={activity.order}>
               <div className="card">
                 <div className={"cover item-" + activity.order}>
                   <h1>{activity.activity_name}</h1>
-                  {/* <span className="price">{activity.order}</span> */}
                   <div className="card-back">
                     <a onClick={() => handleClick(activity.order)}>Play Game</a>
                   </div>

@@ -30,7 +30,7 @@ export default function Results(props: any) {
 
     answer.map((question: any) =>
       rows.push(
-        <div className="container-holder" key={i}>
+        <div className="container-holder" key={question.id}>
           <hr />
           <div className="container-holder-item">
             <p>Question #{question.question_number}</p>
