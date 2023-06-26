@@ -25,6 +25,8 @@ const useFetchChosenActivity = (
 
     setCurrentActivity(chosenActivity);
     setCurrentQuestions(chosenActivity.questions);
+    setCurrentActivityName(ActivityType.ACTIVITY_ONE_WORDED);
+
     setIsLoading(false);
 
     if (activityId == ActivityType.ACTIVITY_TWO) {

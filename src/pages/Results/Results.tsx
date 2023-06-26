@@ -11,19 +11,23 @@ import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { ProcessContext } from "../../contexts/ProcessContext";
-import { NUMBER } from "../../constants";
+import { ActivityType, NUMBER } from "../../constants";
 
 export default function Results(props: any) {
   const rows: any[] = [];
   const navigate = useNavigate();
-  const { counterQuestionP, counterRoundP } = useContext(ProcessContext);
+  const { counterQuestionP, counterRoundP, currentActivityNameP } =
+    useContext(ProcessContext);
   const { counterQuestion, setCounterQuestion } = counterQuestionP;
   const { counterRound, setCounterRound } = counterRoundP;
+  const { currentActivityName, setCurrentActivityName } = currentActivityNameP;
 
   // ITERATE THROUGH ALL THE ROUNDS AND QUESTION AND PROVIDE THE LIST TEMPLATE
   for (let i = 1; i <= localStorage.length; i++) {
     const answer = JSON.parse(localStorage.getItem("round" + i)!);
+
     rows.push(<h1>ROUND {i}</h1>);
+
     answer.map((question: any) =>
       rows.push(
         <div className="container-holder" key={i}>
@@ -48,7 +52,9 @@ export default function Results(props: any) {
 
   return (
     <div className="container">
+      <h3>{currentActivityName}</h3>
       <h4>RESULTS</h4>
+
       <hr className="divider" />
       {rows}
       <Button onClick={navigateHome}>HOME</Button>

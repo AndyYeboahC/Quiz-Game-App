@@ -11,7 +11,7 @@ export enum LINKS {
 
 export enum MESSAGE {
   PAGE_NOT_FOUND = "PAGE NOT FOUND",
-  LOADING = "LOADING...",
+  LOADING = "MAKE SURE CORS CHANGER IS ENABLED",
 }
 
 export enum AnswerType {
